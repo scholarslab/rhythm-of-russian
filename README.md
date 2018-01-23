@@ -4,6 +4,7 @@
 ## Prerequisites
 - Docker: https://www.docker.com/community-edition#/download
 - Git: https://git-scm.com/downloads
+- Terminal
 
 ## Create Environment and Files
 - Make a directory for the local project
@@ -19,6 +20,10 @@
   - Seravo wp-custom-bulk-actions
     - `git clone https://github.com/Seravo/wp-custom-bulk-actions.git custom-bulk-actions`
 
+## Running Docker
+- To start docker issue the following while in the 'project-folder'
+  - `docker-compose up`
+- To shutdown docker, press 'Ctrl-C'. That is, hold down the control key and then press the 'c' key.
 
 # Workflow for working on plugin and theme.
 - Based off of the github-flow workflow, see http://scottchacon.com/2011/08/31/github-flow.html

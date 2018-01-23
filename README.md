@@ -1,6 +1,10 @@
 # Docker for local development
 - This repo is for creating a development environment for working on the http://rhythmofrussian.lib.virginia.edu website (which is a clone of http://prosody.lib.virginia.edu)
 
+## Prerequisites
+- Docker: https://www.docker.com/community-edition#/download
+- Git: https://git-scm.com/downloads
+
 ## Create Environment and Files
 - Make a directory for the local project
   - `mkdir project-folder`

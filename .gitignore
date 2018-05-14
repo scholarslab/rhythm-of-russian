@@ -1,3 +1,10 @@
-prosody_theme
+# Files to ignore
+.env
+
+# Folders to ignore
+wp-custom-bulk-actions
 prosody_plugin
-custom-bulk-actions
+rhythm_db_data
+initial_sql
+uploads
+rhythm

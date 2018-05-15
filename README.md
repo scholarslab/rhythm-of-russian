@@ -128,7 +128,7 @@ created).
   - Clone the plugin folder
     - `git clone https://github.com/czthomas/prosody_plugin.git`
   - Clone the theme folder
-    - `git clone https://github.com/czthomas/prosody_theme.git rhythm`
+    - `git clone https://github.com/czthomas/prosody_theme.git`
   - Seravo wp-custom-bulk-actions
     - `git clone https://github.com/Seravo/wp-custom-bulk-actions.git`
 - Create a '.env' file with the following variables

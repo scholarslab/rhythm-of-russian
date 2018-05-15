@@ -27,7 +27,7 @@ services:
      volumes:
        - ./wp-custom-bulk-actions:/var/www/html/wp-content/plugins/custom-bulk-actions/
        - ./prosody_plugin:/var/www/html/wp-content/plugins/prosody_plugin/
-       - ./rhythm:/var/www/html/wp-content/themes/rhythm/
+       - ./prosody_theme:/var/www/html/wp-content/themes/rhythm/
        - ./uploads:/var/www/html/wp-content/uploads/
      ports:
        - ${PORTS}

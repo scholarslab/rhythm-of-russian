@@ -9,7 +9,7 @@ services:
 
        # Only use this line for the initial start up (the very first time docker-compose is run
        # With this line uncommented, the database will be overwritten using the .sql file
-       - ./initial_sql/rhythm.sql:/docker-entrypoint-initdb.d/rhythm.sql
+       #- ./initial_sql/rhythm.sql:/docker-entrypoint-initdb.d/rhythm.sql
      restart: always
      environment:
        MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}

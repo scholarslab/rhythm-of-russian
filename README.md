@@ -26,7 +26,7 @@ This repo holds the Docker files for setting up production and development envir
   - `cd rhythmofrussian.lib.virginia.edu`
 - Clone the plugins and theme repos into your working directory
   - `git clone https://github.com/czthomas/prosody_plugin.git`
-  - `git clone https://github.com/czthomas/prosody_theme.git rhythm`
+  - `git clone https://github.com/czthomas/prosody_theme.git`
   - `git clone https://github.com/Seravo/wp-custom-bulk-actions.git`
 - Create a '.env' file with the following variables
   ```

@@ -22,7 +22,7 @@ services:
        context: .
      depends_on:
        - db
-     image: rhythm_wp:0.1
+     image: rhythm_wp:0.2
      container_name: rhythm_wordpress
      volumes:
        - ./wp-custom-bulk-actions:/var/www/html/wp-content/plugins/custom-bulk-actions/

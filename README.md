@@ -20,6 +20,8 @@ This repo holds the Docker files for setting up production and development envir
   - Note the port number used on the ProxyPass line. this must be the same as used in the left side of the colon on the PORTS line in the .env file (see below)
 - Clone the repository into the appropriate place, ex `/var/www/rhythmofrussian.lib.virginia.edu`
   - `git clone https://github.com/scholarslab/rhythm-of-russian.git rhythmofrussian.lib.virginia.edu`
+  - Needed to change the image version in docker-compose.yml to something different than the prosody version
+    - Use `docker images` to see the current images and version numbers.
 - Change into the 'rhythm-of-russian' folder.
   - `cd rhythmofrussian.lib.virginia.edu`
 - Clone the plugins and theme repos into your working directory

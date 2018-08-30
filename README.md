@@ -5,23 +5,8 @@ This repo holds the Docker files for setting up production and development envir
 - NOTE: The plugins and themes required for the site are not actively maintained or supported by Scholars' Lab, but you are free to fork and change, and submit pull requests.
 
 # Production
-## Initial (first-time only) setup
-- Create the Apache config file
-  - The config should have some form of proxy pass set up. A typical Apache config would look something like this:
-    ```
-    <VirtualHost *:80>
-      ServerName rhythmofrussian.lib.virginia.edu
-
-      ProxyPass / http://localhost:8228/
-      ProxyPassReverse / http://localhost/
-      ProxyPreserveHost On
-    </VirtualHost> 
-    ```
-  - Note the port number used on the ProxyPass line. this must be the same as used in the left side of the colon on the PORTS line in the .env file (see below)
 - Clone the repository into the appropriate place, ex `/var/www/rhythmofrussian.lib.virginia.edu`
   - `git clone https://github.com/scholarslab/rhythm-of-russian.git rhythmofrussian.lib.virginia.edu`
-  - Needed to change the image version in docker-compose.yml to something different than the prosody version
-    - Use `docker images` to see the current images and version numbers.
 - Change into the 'rhythm-of-russian' folder.
   - `cd rhythmofrussian.lib.virginia.edu`
 - Clone the plugins and theme repos into your working directory
@@ -34,13 +19,11 @@ This repo holds the Docker files for setting up production and development envir
   MYSQL_USER=wordpress_user
   MYSQL_PASSWORD=wordpress_password
   MYSQL_DATABASE=wordpress
-  WORDPRESS_DB_HOST=db:3306
+  WORDPRESS_DB_HOST=rhythm_mysql:3306
   WORDPRESS_TABLE_PREFIX=wp_
-  PORTS=8888:80
   ```
   - NOTE the following about each line:
     - `MYSQL_DATABASE`, `WORDPRESS_DB_HOST`, `WORDPRESS_TABLE_PREFIX` must be as written. 
-    - `PORTS` depends on production or development. Production requires a different port than 80 for the first value (left side of colon).
     - The first three lines can be whatever.
 - Copy the uploads directory from the old RoR site
   - `scp -r old.rhythm.site:/path/to/wp/wp-content/uploads uploads`

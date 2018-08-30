@@ -1,7 +1,7 @@
 version: '2'
 
 services:
-   db:
+   rhythm_mysql:
      image: mysql:5.7
      container_name: rhythm_mysql
      volumes:
@@ -16,12 +16,14 @@ services:
        MYSQL_DATABASE: ${MYSQL_DATABASE}
        MYSQL_USER: ${MYSQL_USER}
        MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+     labels:
+       - "traefik.enable=false"
 
-   wordpress:
+   rhythm_wordpress:
      build:
        context: .
      depends_on:
-       - db
+       - rhythm_mysql
      image: rhythm_wp:0.2
      container_name: rhythm_wordpress
      volumes:
@@ -29,11 +31,20 @@ services:
        - ./prosody_plugin:/var/www/html/wp-content/plugins/prosody_plugin/
        - ./prosody_theme:/var/www/html/wp-content/themes/rhythm/
        - ./uploads:/var/www/html/wp-content/uploads/
-     ports:
-       - ${PORTS}
      restart: always
      environment:
        WORDPRESS_DB_HOST: ${WORDPRESS_DB_HOST}
        WORDPRESS_DB_USER: ${MYSQL_USER}
        WORDPRESS_DB_PASSWORD: ${MYSQL_PASSWORD}
        WORDPRESS_TABLE_PREFIX: ${WORDPRESS_TABLE_PREFIX}
+     labels:
+       - "traefik.enable=true"
+       - "traefik.docker.network=thenetwork"
+       - "traefik.port=80"
+       - "traefik.backend=rhythm_wordpress"
+       - "traefik.frontend.rule=Host:rhythmofrussian.lib.virginia.edu"
+
+networks:
+  default:
+    external:
+      name: thenetwork
